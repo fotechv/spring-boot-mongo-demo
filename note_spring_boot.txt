@@ -1,0 +1,17 @@
+http://localhost:8080/customer
+
+
+
+# Lỗi sync thì chạy các lệnh
+- Thêm/edit file gradle.properties
+org.gradle.java.home=C:\\Users\\baonx\\.jdks\\openjdk-22.0.2
+- Setting JAVA_HOME cho IDE
+Settings → Tools → Terminal → Environment variables: thêm JAVA_HOME=C:\Users\baonx\.jdks\openjdk-22.0.2 (và có thể prepend %JAVA_HOME%\bin vào PATH). Mở lại terminal trong IDE.
+- Trong file settings.gradle.kts
+Lưu ý thêm: pluginManagement, dependencyResolutionManagement phía trên plugins
+Sau đó chạy các lệnh
+./gradlew --stop ⇒ Dừng daemon Gradle đang chạy nền, Giải phóng bộ nhớ, fix lỗi daemon bị treo
+./gradlew --refresh-dependencies ⇒ Làm mới cache dependencies của Gradle:
+./gradlew build ⇒ Build toàn bộ project (compile + test + package), Tạo file JAR/WAR trong thư mục build/libs/
+./gradlew clean build ⇒ Xóa sạch thư mục build/ cũ
+./gradlew dependencies --configuration runtimeClasspath ⇒ Hiển thị tất cả dependencies cần thiết khi chạy ứng dụng, 👉 Perfect để kiểm tra conflict phiên bản thư viện

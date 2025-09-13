@@ -1,3 +1,4 @@
+### --- File đã được bổ sung từ gợi ý của bạn --- ###
 HELP.md
 .gradle
 build/
@@ -35,3 +36,58 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### --- Các mục bổ sung thêm dưới đây --- ###
+
+### File biến môi trường & nhạy cảm ###
+# Bỏ qua các file chứa thông tin cấu hình nhạy cảm (mật khẩu, API keys, v.v.)
+.env
+.application.properties
+*.key
+*.cert
+*.p12
+*.jks
+
+### File log ###
+# Bỏ qua các file log được sinh ra khi chạy ứng dụng
+*.log
+logs/
+
+### File đóng gói (Packaging) ###
+# Bỏ qua các file jar, war được build ra
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
+*.tar.gz
+
+### Hệ điều hành ###
+# Các file rác của hệ điều hành
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+### Maven (Bổ sung nếu dự án dùng Maven) ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+### Windows ###
+# Thư mục tạm của Windows
+[Tt]humbs.db
+$RECYCLE.BIN/
+
+### Linux ###
+# File swap
+.*.swp
+.*.swo
+*~

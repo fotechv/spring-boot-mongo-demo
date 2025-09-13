@@ -10,5 +10,4 @@ public class MongodemoApplication {
 
         SpringApplication.run(MongodemoApplication.class, args);
     }
-
 }
