@@ -1,17 +1,19 @@
 http://localhost:8080/customer
 
+# Change some parameters in files
++ spring-boot-mongo-demo\gradle.properties
++ spring-boot-mongo-demo\src\main\resources\application.properties
 
-
-# Lỗi sync thì chạy các lệnh
-- Thêm/edit file gradle.properties
+# If sync fails, run the commands
+- Add/edit gradle.properties file
 org.gradle.java.home=C:\\Users\\baonx\\.jdks\\openjdk-22.0.2
-- Setting JAVA_HOME cho IDE
-Settings → Tools → Terminal → Environment variables: thêm JAVA_HOME=C:\Users\baonx\.jdks\openjdk-22.0.2 (và có thể prepend %JAVA_HOME%\bin vào PATH). Mở lại terminal trong IDE.
-- Trong file settings.gradle.kts
-Lưu ý thêm: pluginManagement, dependencyResolutionManagement phía trên plugins
-Sau đó chạy các lệnh
-./gradlew --stop ⇒ Dừng daemon Gradle đang chạy nền, Giải phóng bộ nhớ, fix lỗi daemon bị treo
-./gradlew --refresh-dependencies ⇒ Làm mới cache dependencies của Gradle:
-./gradlew build ⇒ Build toàn bộ project (compile + test + package), Tạo file JAR/WAR trong thư mục build/libs/
-./gradlew clean build ⇒ Xóa sạch thư mục build/ cũ
-./gradlew dependencies --configuration runtimeClasspath ⇒ Hiển thị tất cả dependencies cần thiết khi chạy ứng dụng, 👉 Perfect để kiểm tra conflict phiên bản thư viện
+- Setting JAVA_HOME for IDE
+Settings → Tools → Terminal → Environment variables: add JAVA_HOME=C:\Users\baonx\.jdks\openjdk-22.0.2 (and maybe prepend %JAVA_HOME%\bin to PATH). Reopen terminal in IDE.
+- In the settings.gradle.kts file
+Note more: pluginManagement, dependencyResolutionManagement above plugins
+Then run the commands
+./gradlew --stop ⇒ Stop the Gradle daemon running in the background, Free up memory, fix the daemon hanging error
+./gradlew --refresh-dependencies ⇒ Refresh the Gradle dependencies cache:
+./gradlew build ⇒ Build the entire project (compile + test + package), Create JAR/WAR file in the build/libs/ folder
+./gradlew clean build ⇒ Delete the old build/ folder
+./gradlew dependencies --configuration runtimeClasspath ⇒ Show all dependencies needed when running the application, 👉 Perfect for checking library version conflicts
